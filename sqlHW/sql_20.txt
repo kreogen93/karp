@@ -1,0 +1,8 @@
+Найдите в таблице post 3 темы с наибольшим количеством постов
+
+
+SELECT topic, COUNT(id)
+FROM post
+GROUP BY topic
+ORDER BY COUNT(id) DESC
+LIMIT 3

@@ -1,0 +1,8 @@
+Отберите для пользователей из Москвы экспериментальные группы, в которых средний возраст больше 27.2
+
+
+SELECT exp_group
+FROM "user"
+WHERE city = 'Moscow'
+GROUP BY exp_group
+HAVING AVG(age) > 27.2

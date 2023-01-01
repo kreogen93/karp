@@ -1,0 +1,7 @@
+Найдите страну с наименьшим числом пользователей среди стран, у которых общее число пользователей больше 1000
+
+
+SELECT country, COUNT(id)
+FROM "user"
+GROUP BY country
+HAVING COUNT(id) > 1000

@@ -1,0 +1,14 @@
+Найдите город, пользователи которого в возрасте 36 лет 2021-12-01 числа просмотрели запись на тему covid 
+меньше всего раз относительно других городов.
+
+
+SELECT u.city
+FROM "user" u
+JOIN feed_action f ON f.user_id = u.id
+JOIN post p ON f.post_id = p.id
+WHERE u.age = 36
+  AND f.action = 'view'
+  AND f.time::date = '2021-12-01'
+  AND p.topic = 'covid'
+GROUP BY u.city
+ORDER BY COUNT(f.time)

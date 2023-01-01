@@ -1,0 +1,13 @@
+Сгруппируйте пользователей сначала по экспериментальной группе, а затем по операционной системе. 
+В каждой группе подсчитайте количество пользователей, максимальный и минимальный возраст.
+
+
+SELECT exp_group, COUNT(id), MAX(age), MIN(age)
+FROM "user"
+GROUP BY exp_group
+
+
+SELECT os, COUNT(id), MAX(age), MIN(age)
+FROM "user"
+GROUP BY os
+

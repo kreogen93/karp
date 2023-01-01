@@ -1,0 +1,11 @@
+Отберите post_id, time, age и os пользователя для всех лайков пользователей из Омска. 
+Отсортируйте результаты по убыванию времени действия
+
+
+SELECT f.post_id, f.time, u.age, u.os
+FROM feed_action f
+JOIN "user" u
+  ON u.id = f.user_id
+WHERE u.city = 'Omsk' AND f.action = 'like'
+ORDER BY f.time DESC
+LIMIT 100;
