@@ -1,0 +1,5 @@
+Отберите пользователей, которые не из России и при этом либо их экспериментальная группа не 0 и не 3 или их город – Минск.
+
+SELECT *
+FROM "user"
+WHERE NOT (country = 'Russia') AND (NOT (exp_group = 1) AND NOT (exp_group = 3) OR city = 'Minsk')

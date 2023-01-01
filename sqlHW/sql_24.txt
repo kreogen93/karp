@@ -1,0 +1,13 @@
+Напишите SQL запрос, используя который вы получите:
+- топ N постов по лайкам,
+- количество пролайкавших пользователей,
+- время последнего лайка.
+
+В качестве ответа напишите через пробел первые 3 ID постов из этого топа.
+
+
+SELECT f.post_id, COUNT(f.post_id), MAX(f.time)
+FROM feed_action f
+WHERE f.action = 'like'
+GROUP BY f.post_id
+ORDER BY COUNT(f.post_id) DESC

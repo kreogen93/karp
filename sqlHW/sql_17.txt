@@ -1,0 +1,6 @@
+В каждой категории постов определите длину самого длинного текста, используя таблицу post
+
+
+SELECT topic, MAX(LENGTH(text))
+FROM post
+GROUP BY topic

@@ -1,0 +1,5 @@
+Отберите уникальные значения тем (topic) в таблице постов (post).
+
+
+SELECT DISTINCT(topic)
+FROM post
