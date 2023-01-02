@@ -19,6 +19,7 @@ class Vector:
 
     def __mul__(self, other):
         if isinstance(other, Vector):
+            _l, _r = len(self.coords), len(other.coords)
             if len(self.coords) != len(other.coords):
                 raise ValueError(f"left and right lengths differ: {_l} != {_r}")
             result = 0
